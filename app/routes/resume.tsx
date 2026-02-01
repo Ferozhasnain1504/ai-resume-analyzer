@@ -73,14 +73,14 @@ const Resume = () => {
             </Link>
         </nav>
         <div className='flex flex-row w-full max-lg:flex-col-reverse'>
-            <section className='feedback-section bg-[url("/images/bg-small.svg")] bg-cover sticky top-0 flex items-center justify-center py-12'>
+            <section className='preview-section bg-[url("/images/bg-small.svg")] bg-cover sticky top-0'>
                 {imageUrl ? (
-                    <div className='animate-in fade-in duration-1000 gradient-border max-sm:m-0 w-full max-w-4xl'>
-                        <a href={resumeUrl} target='_blank' rel='noopener noreferrer'>
+                    <div className='animate-in fade-in duration-1000 gradient-border max-sm:m-0 w-full max-h-[86vh] flex items-start justify-center p-2'>
+                        <a href={resumeUrl} target='_blank' rel='noopener noreferrer' className='w-full h-full flex items-start justify-center'>
                             <img
                                 src={imageUrl}
                                 alt='Resume preview'
-                                className='w-full max-h-[80vh] object-contain rounded-2xl'
+                                className='w-full max-h-[86vh] object-contain rounded-2xl shadow-lg'
                                 title='resume'
                             />
                         </a>
@@ -90,7 +90,7 @@ const Resume = () => {
                 )}
             </section>
             <section className='feedback-section'>
-                <h2 className='text-4xl !text-black font-bold'>Resume Review</h2>
+                <h2 className='text-3xl !text-black font-bold'>Resume Review</h2>
                 {feedback ? (
                     <div className='flex flex-col gap-8 animate-in fade-in duration-1000'>
                         <Summary feedback={feedback}/>
