@@ -93,7 +93,11 @@ form {
   }
 
   .feedback-section {
-    @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
+    @apply flex flex-col gap-8 w-1/3 px-8 max-lg:w-full py-6;
+  }
+
+  .preview-section {
+    @apply flex flex-col gap-8 w-2/3 px-8 max-lg:w-full pt-6 pb-6 min-h-[70vh] items-start justify-start;
   }
 
   .navbar {
