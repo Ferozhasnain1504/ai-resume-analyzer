@@ -1,87 +1,142 @@
-# Welcome to React Router!
+# 🧠 CVAI - AI Resume Analyzer
 
-A modern, production-ready template for building full-stack React applications using React Router.
+An **AI-powered Resume Analyzer** web application built using **Puter** that allows users to upload resumes and receive structured insights, feedback, and analysis using modern AI workflows.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+This project leverages **Puter’s cloud-native platform** for file handling, execution, and AI-assisted processing — making it lightweight, scalable, and easy to deploy.
 
 ---
 
-Built with ❤️ using React Router.
+## ✨ Key Features
+
+- 📄 Upload resumes (PDF / text-based)
+- 🧠 Analyze resume content using AI
+- 📌 Extract key sections:
+  - Skills
+  - Education
+  - Experience
+- 💡 Provide AI-generated feedback & insights
+- ☁️ Cloud-based execution powered by **Puter**
+- ⚡ Fast, modern frontend using Vite + React
+
+---
+
+## 🧩 What is Puter & Why It’s Used?
+
+**Puter** is an open cloud platform that provides:
+- Browser-based runtime
+- File system APIs
+- AI-friendly execution environment
+- Easy hosting without traditional backend setup
+
+### In this project, Puter is used for:
+- 🗂 Resume file storage & access
+- 🧠 Running AI logic without managing servers
+- 🌐 Deploying the app directly in the browser cloud
+- 🔐 Secure, sandboxed execution
+
+This removes the need for:
+❌ Traditional backend servers  
+❌ Complex cloud configuration  
+❌ Manual file handling  
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|------|-----------|
+| Platform | **Puter** |
+| Frontend | React + TypeScript |
+| Build Tool | Vite |
+| Routing | React Router |
+| Styling | CSS / Tailwind (if used) |
+| AI Logic | Puter AI APIs / Custom logic |
+| File Handling | Puter File System |
+
+---
+
+## 📁 Project Structure
+
+```
+ai-resume-analyzer/
+├── app/ # Application source code
+├── constants/ # Static values & prompts
+├── public/ # Static assets
+├── types/ # TypeScript types
+├── react-router.config.ts # Routing configuration
+├── vite.config.ts # Vite setup
+├── Dockerfile # Optional container support
+├── notes.md # Development notes
+├── package.json # Scripts & dependencies
+└── README.md # Documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
+- Node.js (v16+)
+- npm / yarn
+- A **Puter account**
+
+---
+
+### 🔧 Installation
+
+```bash
+git clone https://github.com/Ferozhasnain1504/ai-resume-analyzer.git
+cd ai-resume-analyzer
+npm install
+```
+
+#### ▶️ Run Locally
+```bash
+npm run dev
+```
+Then open:
+```
+http://localhost:5173
+```
+
+### ☁️ Running on Puter
+Open Puter
+
+1. Upload or link this repository
+2. Run the app directly inside Puter’s environment
+3. Use Puter’s file system to upload r🙌 Acknowledgements
+
+Puter for providing a powerful cloud runtime
+
+Open-source AI & frontend toolsesumes
+4. Let AI analyze resumes in real time
+No backend deployment required 🚀
+
+### 🧠 How the Resume Analyzer Works
+
+1. User uploads resume via Puter file system
+2. Text is extracted from the document
+3. AI logic processes content
+4. Insights & feedback are generated
+5. Structured results displayed in UI
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+* Fork the repo
+* Create a feature branch
+*   Submit a pull request
+
+## 📄 License
+
+Specify your license here (MIT recommended).
+
+---
+
+## 🙌 Acknowledgements
+
+Puter for providing a powerful cloud runtime
+Open-source AI & frontend tools
