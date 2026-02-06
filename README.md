@@ -1,4 +1,5 @@
 # 🧠 CVAI - AI Resume Analyzer
+[![Live on Puter](https://img.shields.io/badge/Live%20Preview-Puter-blue)][(https://puter.com/app/cvai-ai-resume-analyzer)])
 
 An **AI-powered Resume Analyzer** web application built using **Puter** that allows users to upload resumes and receive structured insights, feedback, and analysis using modern AI workflows.
 
@@ -38,6 +39,18 @@ This removes the need for:
 ❌ Traditional backend servers  
 ❌ Complex cloud configuration  
 ❌ Manual file handling  
+
+---
+
+## 🌐 Live Preview
+
+🚀 **Experience the AI Resume Analyzer in action**
+
+🔗 **Live Demo:** https://puter.com/app/cvai-ai-resume-analyzer  
+
+🟢 Runs entirely on **Puter**  
+🟢 No backend required  
+🟢 Upload resumes & get instant AI insights
 
 ---
 
