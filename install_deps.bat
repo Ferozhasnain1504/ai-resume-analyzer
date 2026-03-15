@@ -1,0 +1,1 @@
+call npm install @splinetool/react-spline @splinetool/runtime

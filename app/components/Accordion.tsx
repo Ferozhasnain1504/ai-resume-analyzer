@@ -34,12 +34,12 @@ export const AccordionHeader = ({ itemId, children }: { itemId: string; children
   return (
     <button
       onClick={() => ctx.toggle(itemId)}
-      className='flex items-center justify-between w-full p-4 rounded-2xl bg-white border border-gray-100'
+      className='flex items-center justify-between w-full p-4 rounded-2xl bg-dark-200/50 border border-white/10 hover:bg-white/5 transition-colors text-white'
       aria-expanded={isOpen}
       aria-controls={`accordion-content-${itemId}`}
     >
       {children}
-      <span className='ml-4 text-gray-500'>{isOpen ? '−' : '+'}</span>
+      <span className='ml-4 text-gray-400 font-bold'>{isOpen ? '−' : '+'}</span>
     </button>
   );
 };

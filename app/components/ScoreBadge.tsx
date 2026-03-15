@@ -7,13 +7,13 @@ const ScoreBadge: React.FC<ScoreBadgeProps> = ({ score }) => {
   let badgeText = '';
 
   if (score > 70) {
-    badgeColor = 'bg-badge-green text-green-600';
+    badgeColor = 'bg-green-900/30 border border-green-500/30 text-green-400';
     badgeText = 'Strong';
   } else if (score > 49) {
-    badgeColor = 'bg-badge-yellow text-yellow-600';
+    badgeColor = 'bg-yellow-900/30 border border-yellow-500/30 text-yellow-400';
     badgeText = 'Good Start';
   } else {
-    badgeColor = 'bg-badge-red text-red-600';
+    badgeColor = 'bg-red-900/30 border border-red-500/30 text-red-400';
     badgeText = 'Needs Work';
   }
 
