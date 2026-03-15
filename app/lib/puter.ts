@@ -15,7 +15,7 @@ declare global {
           data: string | File | Blob
         ) => Promise<File | undefined>;
         read: (path: string) => Promise<Blob>;
-        upload: (file: File[] | Blob[]) => Promise<FSItem>;
+        upload: (file: File | File[] | Blob | Blob[]) => Promise<FSItem>;
         delete: (path: string) => Promise<void>;
         readdir: (path: string) => Promise<FSItem[] | undefined>;
       };
@@ -61,7 +61,7 @@ interface PuterStore {
       data: string | File | Blob
     ) => Promise<File | undefined>;
     read: (path: string) => Promise<Blob | undefined>;
-    upload: (file: File[] | Blob[]) => Promise<FSItem | undefined>;
+    upload: (file: File | File[] | Blob | Blob[]) => Promise<FSItem | undefined>;
     delete: (path: string) => Promise<void>;
     readDir: (path: string) => Promise<FSItem[] | undefined>;
   };
@@ -292,7 +292,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
     return puter.fs.read(path);
   };
 
-  const upload = async (files: File[] | Blob[]) => {
+  const upload = async (files: File | File[] | Blob | Blob[]) => {
     const puter = getPuter();
     if (!puter) {
       setError("Puter.js not available");
@@ -428,7 +428,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
       write: (path: string, data: string | File | Blob) => write(path, data),
       read: (path: string) => readFile(path),
       readDir: (path: string) => readDir(path),
-      upload: (files: File[] | Blob[]) => upload(files),
+      upload: (files: File | File[] | Blob | Blob[]) => upload(files),
       delete: (path: string) => deleteFile(path),
     },
     ai: {

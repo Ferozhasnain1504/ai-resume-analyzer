@@ -21,7 +21,7 @@ const Upload = () => {
   const handleAnalyze = async ({companyName, jobTitle, jobDescription, file} : {companyName : string, jobTitle : string, jobDescription : string, file: File}) => {
     setIsProcessing(true);
     setStatusText('Uploading your resume...');
-    const uploadedFile = await fs.upload([file]);
+    const uploadedFile = await fs.upload(file);
 
     if(!uploadedFile){
         return setStatusText('Failed to upload file');
@@ -34,7 +34,7 @@ const Upload = () => {
     }
 
     setStatusText('Uploading image...');
-    const uploadedImage = await fs.upload([imageFile.file]);
+    const uploadedImage = await fs.upload(imageFile.file);
     if(!uploadedImage){
         return setStatusText('Failed to upload image');
     }
@@ -85,40 +85,46 @@ const Upload = () => {
 
   };
 
-  return ( <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+  return ( 
+      <main className="bg-dark-100 min-h-screen relative overflow-hidden">
+        {/* Subtle glowing ambient light behind the main content */}
+        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-neon-cyan/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-neon-violet/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+
         <Navbar />
 
-        <section className="main-section ">
-             <div className='page-heading py-16'>
+        <section className="main-section">
+             <div className='page-heading py-16 z-10 mx-auto w-full max-w-4xl'>
                 <h1>Smart feedback for your dream job</h1>
                 {isProcessing ? (
                     <>
                         <h2>{statusText}</h2>
-                        <img src="/images/resume-scan.gif" className='w-full'/>
+                        {/* Ensure GIF works well on dark mode, or keep it. For now keeping it. */}
+                        <img src="/images/resume-scan.gif" className='w-full rounded-2xl border border-white/10 mix-blend-screen opacity-80'/>
                     </>
                 ) : (
                     <h2>Upload your resume to get started</h2>
                 )}
                 {!isProcessing && (
-                    <form id="upload-form" onSubmit = {handleSubmit} className='flex flex-col gap-4 mt-8'>
+                    <form id="upload-form" onSubmit = {handleSubmit} className='flex flex-col gap-6 mt-8 w-full glass-panel p-8 rounded-3xl'>
                         <div className="form-div">
                             <label htmlFor="company-name">Company Name</label>
-                            <input type="text" name="company-name" placeholder="Company Name" id="company-name" />
+                            <input type="text" name="company-name" placeholder="Company Name" id="company-name" required />
                         </div>
                         <div className="form-div">
                             <label htmlFor="job-title">Job Title</label>
-                            <input type="text" name="job-title" placeholder="Job Title" id="job-title" />
+                            <input type="text" name="job-title" placeholder="Job Title" id="job-title" required />
                         </div>
                         <div className="form-div">
                             <label htmlFor="job-description">Job Description</label>
-                            <textarea rows={5} name="job-description" placeholder="Job Description" id="job-description" />
+                            <textarea rows={5} name="job-description" placeholder="Paste the job description here..." id="job-description" required />
                         </div>
                         <div className="form-div">
                             <label htmlFor="uploader">Upload Resume</label>
                             <FileUploader onFileSelect={handleFileSelect} />
                         </div>
 
-                        <button className='primary-button' type='submit'>
+                        <button className='primary-button mt-4' type='submit'>
                             Analyze Resume
                         </button>
                     </form>
